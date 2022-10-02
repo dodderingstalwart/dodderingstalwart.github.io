@@ -1,3 +1,3 @@
 # dodderingstalwart.github.io
 
-simple website
+website
