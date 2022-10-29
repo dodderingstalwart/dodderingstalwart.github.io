@@ -2,6 +2,7 @@ body {
 	background-image:url('../background.jpg');
 	margin: 60px auto;
 	width: 70%;
+	color: #FFFFFF;
 }
 nav ul, footer ul {
         font-family: 'Helvetica', 'Arial', 'Sans-Serif';
