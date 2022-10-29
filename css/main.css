@@ -1,5 +1,7 @@
 body {
 	background-image:url('../background1.jpg');
+	background-repeat: no-repeat;
+	color: #FFFFFF;
 }
 nav ul, footer ul {
         font-family: 'Helvetica', 'Arial', 'Sans-Serif';
