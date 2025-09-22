@@ -9,7 +9,7 @@ title = "Carnac"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "face.PNG"
+  logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
@@ -17,7 +17,7 @@ title = "Carnac"
 [params.author]
   name = "Allan"
 #   email = "youremail@example.com"
-  image = "img/blowfish_logo.png"
+  image = "face.PNG"
   imageQuality = 96
   headline = "Hola"
 #   bio = "A little bit about you"
