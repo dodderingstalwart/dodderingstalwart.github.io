@@ -15,7 +15,7 @@ title = "Doddering Stalwart"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
-  name = "Allan"
+  name = "Allan Sotelo"
 #   email = "youremail@example.com"
   image = "face.PNG"
   imageQuality = 96
