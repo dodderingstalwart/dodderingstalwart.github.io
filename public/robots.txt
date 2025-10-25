@@ -1,3 +1,3 @@
 User-agent: *
-Allow: /
-Sitemap: dodderingstalwart.dev/sitemap.xml
+Disallow: /
+Sitemap: //localhost:1313/sitemap.xml

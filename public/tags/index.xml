@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Doddering Stalwart</title>
-    <link>dodderingstalwart.dev/tags/</link>
+    <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Doddering Stalwart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Allan Sotelo</copyright>
-    <atom:link href="dodderingstalwart.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

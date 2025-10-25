@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homelab on Doddering Stalwart</title>
-    <link>dodderingstalwart.dev/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content in Homelab on Doddering Stalwart</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Allan Sotelo</copyright>
-    <lastBuildDate>Tue, 07 Oct 2025 10:00:00 -0700</lastBuildDate><atom:link href="dodderingstalwart.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Oct 2025 10:00:00 -0700</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Homelab</title>
-      <link>dodderingstalwart.dev/homelab/</link>
+      <link>//localhost:1313/homelab/</link>
       <pubDate>Tue, 07 Oct 2025 10:00:00 -0700</pubDate>
       
-      <guid>dodderingstalwart.dev/homelab/</guid>
+      <guid>//localhost:1313/homelab/</guid>
       <description></description>
       
     </item>
