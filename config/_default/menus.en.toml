@@ -12,7 +12,7 @@
 
 [[main]]
   name = "Homelab"
-  pageRef = "homelab"
+  pageRef = "https://github.com/dodderingstalwart/homelab/"
   weight = 10
 
 #[[main]]
