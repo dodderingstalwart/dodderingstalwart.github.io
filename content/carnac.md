@@ -1,0 +1,3 @@
+---
+title: "Carnac the Magnificent"
+---
