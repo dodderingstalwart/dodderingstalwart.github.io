@@ -154,6 +154,22 @@ description: "Fetch Jokes and Insults from database"
 
 <script>
   const API_URL = ''
+
+  function setLoading(isLoading) {
+    const loadingE1 = document.getElementByID('loading');
+    const jokeBtn = document.getElementById('joke-btn');
+    const insultBtn = document.getElemenetById('insult-btn');
+
+    if (isLoading) {
+      loadingE1.style.display = 'block';
+      jokeBtn.disabled = true;
+      insultBtn.disabled = true;
+    } else {
+      loadingE1.style.display = 'none';
+      jokeBtn.disabled = false;
+      insultBtn.disabled = false
+    }
+  }
   
   function showError(message) {
     const errorE1 = document.getElementById('error-display');
@@ -163,5 +179,60 @@ description: "Fetch Jokes and Insults from database"
       errorE1.style.display = 'none';
     }, 5000);
   }
-  
+
+  async function getjoke() {
+    const display = document.getElementById('joke-display');
+    setloading(true);
+
+    try {
+      const response = await fetch(`${API_URL}/jokes/random`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const joke = await response.json();
+
+      display.innerHTML = 
+        <div class="joke-answer"> ${joke.answer}</div>
+        <div class="joke-question"> ${joke.question}</div>
+        ;
+    } catch (error) {
+      console.error('Error fetching joke:', error);
+      showError('Failed to fetch joke.');
+      display.innerHTML = '';
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function getInsult() {
+    const display = document.getElementById('insult-display');
+    setLoading(true)
+
+    try {
+      const display = await fetch(`${API_URL}/insults/random`);
+    
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      display.innerHTML = `<p> ${data.insult}</p>`;
+    } catch (error) {
+      console.error('Error fetching insult:', error);
+      showError('Failed to fetch insult');
+      display.innerHTML = '';
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('joke-btn').addEventListener('click', getJoke);
+    document.getElementById('insult-btn').addEventListener('click', getInsult);
+  });
+
 </script>
