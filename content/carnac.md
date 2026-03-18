@@ -19,7 +19,7 @@ description: "Fetch Jokes and Insults from database"
 
   <div class="carnac-section">
     <h2>Get an Insult</h2>
-    <button id="insult-btn" class="carnac-button">Unleash the Fury!</button>
+    <button id="insult-btn" class="carnac-button">Boooooo!!!</button>
     <div id="insult-display" class="carnac-result"></div>
   </div>
 
