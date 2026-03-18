@@ -151,3 +151,17 @@ description: "Fetch Jokes and Insults from database"
     }
   }
 </style>
+
+<script>
+  const API_URL = ''
+  
+  function showError(message) {
+    const errorE1 = document.getElementById('error-display');
+    errorE1.textContent = message;
+    errorE1.style.display = 'block';
+    setTimeout(() => {
+      errorE1.style.display = 'none';
+    }, 5000);
+  }
+  
+</script>
