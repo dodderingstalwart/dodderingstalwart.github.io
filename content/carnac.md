@@ -13,5 +13,5 @@ description: "Fetch Jokes and Insults from database"
   <button onclick="getInsult()">Get Insult</button>
   <div id="insult-display"></div>
 
-  <div id+="display-error" class="error-message" style="display: none;"></div>
+  <div id="display-error" class="error-message" style="display: none;"></div>
 </div>
