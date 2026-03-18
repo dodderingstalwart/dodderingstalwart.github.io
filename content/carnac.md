@@ -8,7 +8,7 @@ description: "Fetch Jokes and Insults from database"
   <div class="carnac-header">
     <img src="/images/carnac.jpg" alt="Carnac the Magnificent" class="carnac-image">
     <h1>Carnac the Magnificent</h1>
-    <p class="carnac-subtitle">Wisdom from the all-knowing, all-seeing sage of the East!</p>
+    <p class="carnac-subtitle">Wisdom from the all-knowing, all-seeing sage and soothsayer of the East!</p>
   </div>
 
   <div class="carnac-section">
