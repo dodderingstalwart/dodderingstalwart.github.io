@@ -4,20 +4,30 @@ date: 2026-02-12
 description: "Fetch Jokes and Insults from database"
 ---
 
-<div id="carnac-container">
+<div class="carnac-container">
   <div class="carnac-header">
-  <h1>Carnac the Magnificent</h1>
+    <img src="/images/carnac.jpg" alt="Carnac the Magnificent" class="carnac-image">
+    <h1>Carnac the Magnificent</h1>
+    <p class="carnac-subtitle">Wisdom from the all-knowing, all-seeing sage of the East!</p>
   </div>
 
-  <h2>Get a Carnac Joke</h2>
-  <button onclick="getJoke()">Carnac Joke</button>
-  <div id="joke-display"></div>
+  <div class="carnac-section">
+    <h2>Get a Carnac Joke</h2>
+    <button id="joke-btn" class="carnac-button">Divine the Answer!</button>
+    <div id="joke-display" class="carnac-result"></div>
+  </div>
 
-  <h2>Get an Insult</h2>
-  <button onclick="getInsult()">Get Insult</button>
-  <div id="insult-display"></div>
+  <div class="carnac-section">
+    <h2>Get an Insult</h2>
+    <button id="insult-btn" class="carnac-button">Unleash the Fury!</button>
+    <div id="insult-display" class="carnac-result"></div>
+  </div>
 
-  <div id="display-error" class="error-message" style="display: none;"></div>
+  <div id="loading" class="loading" style="display: none;">
+    <span>Opening the envelope</span>
+  </div>
+
+  <div id="error-display" class="error-message" style="display: none;"></div>
 </div>
 
 <style>
