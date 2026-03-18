@@ -5,6 +5,10 @@ description: "Fetch Jokes and Insults from database"
 ---
 
 <div id="carnac-container">
+  <div class="carnac-header">
+  <h1>Carnac the Magnificent</h1>
+  </div>
+  
   <h2>Get a Carnac Joke</h2>
   <button onclick="getJoke()">Carnac Joke</button>
   <div id="joke-display"></div>
