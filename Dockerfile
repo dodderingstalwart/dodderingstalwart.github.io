@@ -1,14 +1,12 @@
-# Build the Hugo site
-FROM alpine:3.20.1 AS builder
-RUN apk update && apk add hugo
-WORKDIR /src
-COPY . /src
-RUN hugo -v --source=/src --destination=/src/public
+# Use the official peaceiris image for Hugo 0.141.0 extended
+FROM peaceiris/hugo:v0.141.0-full
 
-# Serve with Nginx
-FROM nginx:stable-alpine
-RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /src/public /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Set working directory
+WORKDIR /src
+
+# Expose Hugo default port
+EXPOSE 1313
+
+# Command to run hugo
+CMD ["hugo"]
 
