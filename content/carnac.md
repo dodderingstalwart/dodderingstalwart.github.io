@@ -153,7 +153,7 @@ description: "Fetch Jokes and Insults from database"
 </style>
 
 <script>
-  const API_URL = ''
+  const API_URL = 'https://carnac-api.fly.dev/api'
 
   function setLoading(isLoading) {
     const loadingE1 = document.getElementByID('loading');
