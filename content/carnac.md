@@ -161,7 +161,11 @@ description: "Fetch Jokes and Insults from database"
   const API_URL = 'https://carnac-api.fly.dev/api';
 
   function setLoading(isLoading) {
+<<<<<<< HEAD
     const loadingEl = document.getElementById('loading');
+=======
+    const loadingE1 = document.getElementById('loading');
+>>>>>>> 2879eb0fc49c1c16bad35f0916318be3eb6fb2e7
     const jokeBtn = document.getElementById('joke-btn');
     const insultBtn = document.getElementById('insult-btn');
 
