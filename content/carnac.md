@@ -24,7 +24,7 @@ description: "Fetch Jokes and Insults from database"
   </div>
 
   <div id="loading" class="loading" style="display: none;">
-    <span>Opening the envelope</span>
+    <span>Opening the envelope...</span>
   </div>
 
   <div id="error-display" class="error-message" style="display: none;"></div>
@@ -93,6 +93,11 @@ description: "Fetch Jokes and Insults from database"
     transform: translateY(0);
   }
 
+  .carnac-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
   .carnac-result {
     background: rgba(255, 255, 255, 0.9);
     color: #333;
@@ -153,36 +158,36 @@ description: "Fetch Jokes and Insults from database"
 </style>
 
 <script>
-  const API_URL = 'https://carnac-api.fly.dev/api'
+  const API_URL = 'https://carnac-api.fly.dev/api';
 
   function setLoading(isLoading) {
-    const loadingE1 = document.getElementByID('loading');
+    const loadingEl = document.getElementById('loading');
     const jokeBtn = document.getElementById('joke-btn');
-    const insultBtn = document.getElemenetById('insult-btn');
+    const insultBtn = document.getElementById('insult-btn');
 
     if (isLoading) {
-      loadingE1.style.display = 'block';
+      loadingEl.style.display = 'block';
       jokeBtn.disabled = true;
       insultBtn.disabled = true;
     } else {
-      loadingE1.style.display = 'none';
+      loadingEl.style.display = 'none';
       jokeBtn.disabled = false;
-      insultBtn.disabled = false
+      insultBtn.disabled = false;
     }
   }
   
   function showError(message) {
-    const errorE1 = document.getElementById('error-display');
-    errorE1.textContent = message;
-    errorE1.style.display = 'block';
+    const errorEl = document.getElementById('error-display');
+    errorEl.textContent = message;
+    errorEl.style.display = 'block';
     setTimeout(() => {
-      errorE1.style.display = 'none';
+      errorEl.style.display = 'none';
     }, 5000);
   }
 
-  async function getjoke() {
+  async function getJoke() {
     const display = document.getElementById('joke-display');
-    setloading(true);
+    setLoading(true);
 
     try {
       const response = await fetch(`${API_URL}/jokes/random`);
@@ -193,26 +198,25 @@ description: "Fetch Jokes and Insults from database"
 
       const joke = await response.json();
 
-      display.innerHTML = 
-        <div class="joke-answer"> ${joke.answer}</div>
-        <div class="joke-question"> ${joke.question}</div>
-        ;
+      display.innerHTML = `
+        <div class="joke-answer">${joke.answer}</div>
+        <div class="joke-question">${joke.question}</div>
+      `;
     } catch (error) {
       console.error('Error fetching joke:', error);
-      showError('Failed to fetch joke.');
+      showError('Failed to fetch joke. Make sure the API is running!');
       display.innerHTML = '';
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
   async function getInsult() {
     const display = document.getElementById('insult-display');
-    setLoading(true)
+    setLoading(true);
 
     try {
-      const display = await fetch(`${API_URL}/insults/random`);
-    
+      const response = await fetch(`${API_URL}/insults/random`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -220,10 +224,10 @@ description: "Fetch Jokes and Insults from database"
 
       const data = await response.json();
 
-      display.innerHTML = `<p> ${data.insult}</p>`;
+      display.innerHTML = `<p>${data.insult}</p>`;
     } catch (error) {
       console.error('Error fetching insult:', error);
-      showError('Failed to fetch insult');
+      showError('Failed to fetch insult. Make sure the API is running!');
       display.innerHTML = '';
     } finally {
       setLoading(false);
@@ -234,5 +238,4 @@ description: "Fetch Jokes and Insults from database"
     document.getElementById('joke-btn').addEventListener('click', getJoke);
     document.getElementById('insult-btn').addEventListener('click', getInsult);
   });
-
 </script>
