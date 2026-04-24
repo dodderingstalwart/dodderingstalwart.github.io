@@ -156,7 +156,7 @@ description: "Fetch Jokes and Insults from database"
   const API_URL = 'https://carnac-api.fly.dev/api'
 
   function setLoading(isLoading) {
-    const loadingE1 = document.getElementByID('loading');
+    const loadingE1 = document.getElementById('loading');
     const jokeBtn = document.getElementById('joke-btn');
     const insultBtn = document.getElemenetById('insult-btn');
 
@@ -182,7 +182,7 @@ description: "Fetch Jokes and Insults from database"
 
   async function getjoke() {
     const display = document.getElementById('joke-display');
-    setloading(true);
+    setLoading(true);
 
     try {
       const response = await fetch(`${API_URL}/jokes/random`);
