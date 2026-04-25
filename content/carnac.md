@@ -158,88 +158,85 @@ description: "Fetch Jokes and Insults from database"
 </style>
 
 <script>
-  const API_URL = 'https://carnac-api.fly.dev/api';
+  (function() {
+    const API_URL = 'https://carnac-api.fly.dev/api';
 
-  function setLoading(isLoading) {
-<<<<<<< HEAD
-    const loadingEl = document.getElementById('loading');
-=======
-    const loadingE1 = document.getElementById('loading');
->>>>>>> 2879eb0fc49c1c16bad35f0916318be3eb6fb2e7
-    const jokeBtn = document.getElementById('joke-btn');
-    const insultBtn = document.getElementById('insult-btn');
+    function setLoading(isLoading) {
+      const loadingEl = document.getElementById('loading');
+      const jokeBtn = document.getElementById('joke-btn');
+      const insultBtn = document.getElementById('insult-btn');
 
-    if (isLoading) {
-      loadingEl.style.display = 'block';
-      jokeBtn.disabled = true;
-      insultBtn.disabled = true;
-    } else {
-      loadingEl.style.display = 'none';
-      jokeBtn.disabled = false;
-      insultBtn.disabled = false;
-    }
-  }
-  
-  function showError(message) {
-    const errorEl = document.getElementById('error-display');
-    errorEl.textContent = message;
-    errorEl.style.display = 'block';
-    setTimeout(() => {
-      errorEl.style.display = 'none';
-    }, 5000);
-  }
-
-  async function getJoke() {
-    const display = document.getElementById('joke-display');
-    setLoading(true);
-
-    try {
-      const response = await fetch(`${API_URL}/jokes/random`);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (isLoading) {
+        loadingEl.style.display = 'block';
+        jokeBtn.disabled = true;
+        insultBtn.disabled = true;
+      } else {
+        loadingEl.style.display = 'none';
+        jokeBtn.disabled = false;
+        insultBtn.disabled = false;
       }
-
-      const joke = await response.json();
-
-      display.innerHTML = `
-        <div class="joke-answer">${joke.answer}</div>
-        <div class="joke-question">${joke.question}</div>
-      `;
-    } catch (error) {
-      console.error('Error fetching joke:', error);
-      showError('Failed to fetch joke. Make sure the API is running!');
-      display.innerHTML = '';
-    } finally {
-      setLoading(false);
     }
-  }
+    
+    function showError(message) {
+      const errorEl = document.getElementById('error-display');
+      errorEl.textContent = message;
+      errorEl.style.display = 'block';
+      setTimeout(function() {
+        errorEl.style.display = 'none';
+      }, 5000);
+    }
 
-  async function getInsult() {
-    const display = document.getElementById('insult-display');
-    setLoading(true);
+    async function getJoke() {
+      const display = document.getElementById('joke-display');
+      setLoading(true);
 
-    try {
-      const response = await fetch(`${API_URL}/insults/random`);
+      try {
+        const response = await fetch(API_URL + '/jokes/random');
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (!response.ok) {
+          throw new Error('HTTP error! status: ' + response.status);
+        }
+
+        const joke = await response.json();
+
+        display.innerHTML = 
+          '<div class="joke-answer">' + joke.answer + '</div>' +
+          '<div class="joke-question">' + joke.question + '</div>';
+      } catch (error) {
+        console.error('Error fetching joke:', error);
+        showError('Failed to fetch joke. Make sure the API is running!');
+        display.innerHTML = '';
+      } finally {
+        setLoading(false);
       }
-
-      const data = await response.json();
-
-      display.innerHTML = `<p>${data.insult}</p>`;
-    } catch (error) {
-      console.error('Error fetching insult:', error);
-      showError('Failed to fetch insult. Make sure the API is running!');
-      display.innerHTML = '';
-    } finally {
-      setLoading(false);
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('joke-btn').addEventListener('click', getJoke);
-    document.getElementById('insult-btn').addEventListener('click', getInsult);
-  });
+    async function getInsult() {
+      const display = document.getElementById('insult-display');
+      setLoading(true);
+
+      try {
+        const response = await fetch(API_URL + '/insults/random');
+
+        if (!response.ok) {
+          throw new Error('HTTP error! status: ' + response.status);
+        }
+
+        const data = await response.json();
+
+        display.innerHTML = '<p>' + data.insult + '</p>';
+      } catch (error) {
+        console.error('Error fetching insult:', error);
+        showError('Failed to fetch insult. Make sure the API is running!');
+        display.innerHTML = '';
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('joke-btn').addEventListener('click', getJoke);
+      document.getElementById('insult-btn').addEventListener('click', getInsult);
+    });
+  })();
 </script>
