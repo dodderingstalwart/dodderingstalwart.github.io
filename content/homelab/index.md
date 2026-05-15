@@ -11,7 +11,7 @@ On to the worker nodes which include an old desktop and 2 RPi 5.
 The two RPi 5 have 8GB of RAM while the old desktop has 16GB RAM.
 The desktop is running Ubuntu Server on an old Intel i5 with 4 CPUs.
 
-| Kubernetes Nodes            | `Role`     `OS`
+| Kubernetes Nodes            | Role     OS
 |-----------------------------|---------|--------|
 | Intel i7 with 32GB RAM      | Control | Fedora |
 | AMD Ryzen 3 with 16GB RAM   | Worker  | Fedora |
