@@ -56,7 +56,7 @@ description: "Fetch Jokes and Insults from database"
   }
 
   .carnac-section {
-    background: linear-gradient(135deg, #667eea 0%, #71221fe5 100%);
+    background: linear-gradient(135deg, #667eea 0%, #b56810e5 100%);
     border-radius: 15px;
     padding: 2rem;
     margin: 2rem 0;
