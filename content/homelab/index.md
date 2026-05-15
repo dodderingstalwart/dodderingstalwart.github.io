@@ -1,7 +1,6 @@
 ---
 title: "Homelab"
 description: "A description of my Homelab"
-date: 2026-15-05T10:00:00-07:00
 ---
 This is the start of my [Homelab](https://github.com/dodderingstalwart/homelab).
 ### Setting up the hardware for the Homelab.
