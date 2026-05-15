@@ -5,13 +5,11 @@ description: "A description of my Homelab"
 This is the start of my [Homelab](https://github.com/dodderingstalwart/homelab).
 ### Setting up the hardware for the Homelab.
 The hardware will be one control node and three worker nodes.
-Lets start with the control node that will be using an old laptop running Fedora.
-The control node is using an AMD Ryzen 3 with 4 CPUs with 16GB RAM.
-On to the worker nodes which include an old desktop and 2 RPi 5.
-The two RPi 5 have 8GB of RAM while the old desktop has 16GB RAM.
-The desktop is running Ubuntu Server on an old Intel i5 with 4 CPUs.
+The worker node is using an AMD Ryzen 3 with 4 CPUs with 16GB RAM.
+On the other worker nodes which include 2 RPi 5.
+The two RPi 5 have 8GB of RAM.
 
-| Kubernetes Nodes            | Role     OS
+| Kubernetes Nodes            | Role    | OS
 |-----------------------------|---------|--------|
 | Intel i7 with 32GB RAM      | Control | Fedora |
 | AMD Ryzen 3 with 16GB RAM   | Worker  | Fedora |
